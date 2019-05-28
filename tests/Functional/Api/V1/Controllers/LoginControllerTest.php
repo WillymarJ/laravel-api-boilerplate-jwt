@@ -11,7 +11,7 @@ class LoginControllerTest extends TestCase
 {
     use DatabaseMigrations;
 
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
 
@@ -33,7 +33,8 @@ class LoginControllerTest extends TestCase
             'status' => 'ok'
         ])->assertJsonStructure([
             'status',
-            'token'
+            'token',
+            'expires_in'
         ])->isOk();
     }
 
